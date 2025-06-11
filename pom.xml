@@ -16,17 +16,32 @@
       </dependency>
   </dependencies>
   <build>
-    <plugins>
-      <!--Maven Surfire Plugin for running tests-->
-      <plugin>
-        <groupId>maven surefire-plugins</groupId>
-        <artifactId>maven surefire-plugin</artifactId>
-        <version>2.22</version>
-        <configuration>
-          <redirectTestOutputToFile>false</redirectTestOutputToFile>
-          <useSystemOut>true</useSystemOut>
-        </configuration>
-      </plugin>
-    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugin</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.0.2</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
+        </plugin>
+      </plugins>
+      <plugins>
+        <!--Maven Surfire Plugin for running tests-->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.2.2</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>com.example.App</mainClass>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 </project>
