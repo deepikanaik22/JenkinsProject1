@@ -27,8 +27,6 @@
             <target>1.8</target>
           </configuration>
         </plugin>
-      </plugins>
-      <plugins>
         <!--Maven Surfire Plugin for running tests-->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
